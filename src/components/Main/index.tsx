@@ -1,6 +1,6 @@
-import {FC} from "react";
-import Filter from "../Filter";
+import React, {FC} from "react";
 import Content from "../Content";
+import Filter from "../Filter";
 
 
 const Main:FC = () => {
@@ -8,10 +8,10 @@ const Main:FC = () => {
 
 
     return (
-        <>
+        <div className='container'>
             <Filter/>
-            <Content/>
-        </>
+               <Content/>
+        </div>
     )
 }
 
