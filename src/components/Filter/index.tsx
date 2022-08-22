@@ -1,7 +1,7 @@
 import React, {FC, useEffect} from "react";
-import {useTypeSelector} from "../hooks/useTypeSelector";
+import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {fetchFilters} from "../../store/action-creators/filter";
-import {useAction} from "../hooks/useAction";
+import {useAction} from "../../hooks/useAction";
 const Filter:FC = ()=>{
     const {filters, error, loading} = useTypeSelector(state => state.filter)
     const {fetchFilters} = useAction()

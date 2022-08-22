@@ -1,8 +1,8 @@
 import React, {FC, useEffect} from "react";
-import {useTypeSelector} from "../hooks/useTypeSelector";
+import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {fetchCats} from "../../store/action-creators/cat";
 import Loader from "../Loader";
-import {useAction} from "../hooks/useAction";
+import {useAction} from "../../hooks/useAction";
 
 const Content: FC = () => {
     const {cats, error, loading} = useTypeSelector(state => state.cat)

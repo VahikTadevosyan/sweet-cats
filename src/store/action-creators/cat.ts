@@ -2,7 +2,6 @@ import {CatAction, CatActionTypes} from "../../types/cat";
 import {Dispatch} from "redux";
 import axios from "axios";
 import {API_KEY} from "../../Globals";
-import {FilterAction} from "../../types/filter";
 
 
 export const fetchCats = (filter: number) => {
