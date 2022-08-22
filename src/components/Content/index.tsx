@@ -1,32 +1,43 @@
 import React, {FC, useEffect} from "react";
 import {useTypeSelector} from "../hooks/useTypeSelector";
-import {useDispatch} from "react-redux";
 import {fetchCats} from "../../store/action-creators/cat";
+import Loader from "../Loader";
+import {useAction} from "../hooks/useAction";
 
 const Content: FC = () => {
     const {cats, error, loading} = useTypeSelector(state => state.cat)
-        //TODO type
-    const dispatch: any = useDispatch()
+    const {fetchCats} = useAction()
 
-    useEffect(()=>{
-        dispatch(fetchCats())
-    },[])
+    useEffect(() => {
+        fetchCats(15)
+    }, [])
+
+    console.log(cats, "test")
 
 
     if (loading) {
-        return <div className='container'>Loading...</div>
+        return (
+            <div className='content-container'>
+                <Loader/>
+            </div>
+        )
     }
     if (error) {
-        return <div className='container'>{error}</div>
+        return <div className='content-container'>{error}</div>
     }
 
     return (
+        <div>
         <div className='content-container'>
             {cats.map((item) => (
-                <div className='card'>
-                    <img src={item.url} alt=""/>
+                <div className='card' key={item.id}>
+                    <img src={item.url} alt=''/>
                 </div>
-            ) )}
+            ))}
+        </div>
+            <div className='btn-more-container'>
+                <button className='btn-more'>Show more</button>
+            </div>
         </div>
     )
 }
