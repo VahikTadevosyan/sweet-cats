@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux'
-import {catReducer} from "./catReducer";
+import {categoryReducer} from "./categoryReducer";
 import {filterReducer} from "./filterReducer";
 
 export const rootReducer = combineReducers({
-    cat: catReducer,
+    category: categoryReducer,
     filter: filterReducer
 })
 

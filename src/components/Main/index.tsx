@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import Content from "../Content";
-import Filter from "../Filter";
+import Categories from "../Categories";
 
 
 const Main: FC = () => {
@@ -8,7 +8,7 @@ const Main: FC = () => {
 
     return (
         <div className='container'>
-            <Filter/>
+            <Categories/>
             <Content/>
         </div>
     )
